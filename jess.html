@@ -322,7 +322,7 @@
     </div>
 
     <script>
-        // Lectura automática del parámetro invisible en la URL (?para=Nombre)
+        // Lectura del parámetro en la URL (?para=Nombre)
         const urlParams = new URLSearchParams(window.location.search);
         const personParam = urlParams.get('para') || urlParams.get('nombre');
         const targetPerson = personParam ? personParam.trim() : null;
@@ -332,7 +332,6 @@
         const btnGiveUp = document.getElementById('btn-giveup');
         const mainTitle = document.getElementById('main-title');
 
-        // Personalización del título si viene con parámetro
         if (targetPerson) {
             mainTitle.innerText = `${targetPerson}, ¿vamos a la playa? ✨`;
         }
@@ -344,31 +343,59 @@
         let selectedTime = "🌅 Al atardecer";
         let selectedPlan = "🌊 Caminar por la orilla";
 
+        // Nombre formateado para los textos dinámicos
+        const nameText = targetPerson ? targetPerson : "Oye";
+
+        // Mensajes dinámicos que incluyen el nombre que venga en la URL
         const messages = [
-            "¿Segura? 🤔", "Piénsalo mejor ✨", "Casi, pero no 💨", "Intenta otra vez 😂",
-            "Opción no disponible 🔒", "Botón equivocado 😜", "Esa no era la idea 🙅‍♂️",
-            "El sí queda mejor ✨", "Demasiado lenta 🏃‍♀️💨", "¿Tanto lo dudas? 🥺",
-            "Ruta bloqueada 🚫", "El mar espera 🌊", "Te quedas sin espacio 😱",
-            "Es mejor decir que sí ✨", "No se puede presionar 🛡️", "¿Otra vez? 🙄",
-            "Buen intento 🚀", "Sigues intentando 😅", "El sí sigue creciendo 👀",
-            "Insistente 💪", "No vas a poder 😜", "Movimiento en vano 🧭",
-            "Por ahí no 💨", "La playa suena mejor 🌅", "Sigue participando 🎟️",
-            "Opción denegada ❌", "Elige el otro 💚", "Aún con dudas 🧐",
-            "Casi le das 😜", "Menos opciones ⏳", "Este botón no cede 🪄",
-            "Es inevitable 🪐", "Más de 30 intentos 📈", "Un clic al sí y listo 😉",
+            "¿Segura? 🤔", 
+            "Piénsalo mejor ✨", 
+            "Casi, pero no 💨", 
+            `¿Tanto lo dudas, ${nameText}? 🥺`, 
+            "Opción no disponible 🔒", 
+            "Botón equivocado 😜", 
+            "Esa no era la idea 🙅‍♂️",
+            `${nameText}, el mar nos llama 🌊`, 
+            "Demasiado lenta 🏃‍♀️💨", 
+            "El sí queda mejor ✨", 
+            "Ruta bloqueada 🚫", 
+            `Vamos ${nameText}, di que sí 😉`, 
+            "Te quedas sin espacio 😱",
+            "Es mejor decir que sí ✨", 
+            "No se puede presionar 🛡️", 
+            "¿Otra vez? 🙄",
+            `No te resistas, ${nameText} 🌅`, 
+            "Buen intento 🚀", 
+            "Sigues intentando 😅", 
+            "El sí sigue creciendo 👀",
+            "Insistente 💪", 
+            "No vas a poder 😜", 
+            "Movimiento en vano 🧭",
+            "Por ahí no 💨", 
+            "La playa suena mejor 🌅", 
+            `¿Segura segura, ${nameText}? 👀`, 
+            "Opción denegada ❌", 
+            "Elige el otro 💚", 
+            "Aún con dudas 🧐",
+            "Casi le das 😜", 
+            "Menos opciones ⏳", 
+            "Este botón no cede 🪄",
+            "Es inevitable 🪐", 
+            "Más de 30 intentos 📈", 
+            "Un clic al sí y listo 😉",
             "¡Ya me cansé! 🏳️"
         ];
 
         function handleNoInteraction(e) {
             if (e.type === 'pointerdown' && e.pointerType === 'mouse') return;
-            if (attempts >= 34) return;
+            if (attempts >= messages.length - 1) return;
             
             e.preventDefault();
             dodge();
         }
 
         function handleNoClick(e) {
-            if (attempts >= 34) {
+            if (attempts >= messages.length - 1) {
                 btnYes.style.display = 'none';
                 btnNo.style.display = 'none';
                 btnGiveUp.style.display = 'inline-block';
