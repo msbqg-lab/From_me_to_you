@@ -272,7 +272,8 @@
             <div class="buttons-container" id="btn-container">
                 <button id="btn-yes" onclick="acceptOffer('Aceptó con el botón SÍ')">Sí, vamos ✨</button>
                 <button id="btn-giveup" onclick="startSecondGame()">Okey tú ganas, acepto el no 😔</button>
-                <button id="btn-no" onpointerenter="handleNoInteraction(event)" onpointerdown="handleNoInteraction(event)" onclick="handleNoClick(event)">No</button>
+                <!-- Eventos limpios controlados por JS -->
+                <button id="btn-no">No</button>
             </div>
         </div>
 
@@ -339,14 +340,13 @@
         let attempts = 0;
         let scale = 1;
         let isDetached = false;
+        let lastTriggerTime = 0; // Control antirrebote para móviles
 
         let selectedTime = "🌅 Al atardecer";
         let selectedPlan = "🌊 Caminar por la orilla";
 
-        // Nombre formateado para los textos dinámicos
         const nameText = targetPerson ? targetPerson : "Oye";
 
-        // Mensajes dinámicos que incluyen el nombre que venga en la URL
         const messages = [
             "¿Segura? 🤔", 
             "Piénsalo mejor ✨", 
@@ -386,26 +386,43 @@
             "¡Ya me cansé! 🏳️"
         ];
 
-        function handleNoInteraction(e) {
-            if (e.type === 'pointerdown' && e.pointerType === 'mouse') return;
-            if (attempts >= messages.length - 1) return;
-            
-            e.preventDefault();
-            dodge();
-        }
+        // Función única y protegida contra disparos múltiples simultáneos
+        function processNoAction(e) {
+            if (e) e.preventDefault();
 
-        function handleNoClick(e) {
+            const now = Date.now();
+            // Si pasaron menos de 220ms desde el último salto, ignorar (evita toques dobles de pantalla táctil)
+            if (now - lastTriggerTime < 220) return;
+            lastTriggerTime = now;
+
             if (attempts >= messages.length - 1) {
+                // Llegó al límite: mostrar botón de rendirse
                 btnYes.style.display = 'none';
                 btnNo.style.display = 'none';
                 btnGiveUp.style.display = 'inline-block';
                 btnGiveUp.style.transform = `scale(${scale})`;
                 mainTitle.innerText = "Está bien, me rindo 🏳️";
-            } else {
-                e.preventDefault();
-                dodge();
+                return;
             }
+
+            dodge();
         }
+
+        // Asignación de listeners unificados
+        btnNo.addEventListener('mouseenter', (e) => {
+            // En PC se esquiva al pasar el mouse por encima
+            processNoAction(e);
+        });
+
+        btnNo.addEventListener('touchstart', (e) => {
+            // En móviles se esquiva apenas el dedo roza el botón
+            processNoAction(e);
+        }, { passive: false });
+
+        btnNo.addEventListener('click', (e) => {
+            // Respaldo por si se presiona muy rápido con teclado o clic directo
+            processNoAction(e);
+        });
 
         function dodge() {
             if (!isDetached) {
