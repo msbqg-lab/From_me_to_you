@@ -1,140 +1,197 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Para_jessica</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background: linear-gradient(135deg, #0f0f0f, #24123d);
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden; /* Evita barras de desplazamiento si el botón crece mucho */
-            position: relative;
-        }
-
-        .card {
-            text-align: center;
-            background: rgba(255,255,255,0.06);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(127,92,255,0.4);
-            max-width: 90%;
-            z-index: 10;
-        }
-
-        h1 {
-            color: #c7a6ff;
-            margin-bottom: 25px;
-        }
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            border: none;
-            border-radius: 30px;
-            padding: 14px 28px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        #si {
-            background: #7f5cff;
-            color: white;
-            z-index: 20; /* Mantiene el botón Sí accesible */
-        }
-
-        #no {
-            background: #333;
-            color: #ddd;
-            z-index: 10;
-        }
-
-        .credits {
-            position: absolute;
-            bottom: 15px;
-            right: 20px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-            z-index: 30;
-            pointer-events: none;
-            text-align: right;
-            line-height: 1.3;
-        }
-    </style>
-</head>
-<body>
-
-<div class="card">
-    <h1>¿Querés intentar algo conmigo?</h1>
-    <div class="buttons">
-        <button id="si" onclick="aceptar()">Sí</button>
-        <button id="no" onclick="rechazar()">No</button>
-    </div>
-</div>
-
-<div class="credits">
-    From: Marcos<br>
-    To: Jessica
-</div>
-
 <script>
-    let escala = 1;
-    let textosNo = [
-        "¿segura?",
-        "pensalo bien",
-        "dale una oportunidad",
-        "no es tan mala idea",
-        "última chance...",
-        "de verdad no?",
-        "mira lo grande que está el SÍ",
-        "ya casi no podés apretar acá",
-        "insisto...",
-        "no seas mala 🥺"
+    const btnNo = document.getElementById('btn-no');
+    const btnYes = document.getElementById('btn-yes');
+    const btnGiveUp = document.getElementById('btn-giveup');
+    const mainTitle = document.getElementById('main-title');
+    
+    let attempts = 0;
+    let scale = 1;
+    let isDetached = false;
+
+    let selectedTime = "🌅 Al atardecer";
+    let selectedPlan = "🌊 Caminar por la orilla";
+
+    const messages = [
+        "¿Segura? 🤔", "Piénsalo mejor ✨", "Casi, pero no 💨", "Intenta otra vez 😂",
+        "Opción no disponible 🔒", "Botón equivocado 😜", "Esa no era la idea 🙅‍♂️",
+        "El sí queda mejor ✨", "Demasiado lenta 🏃‍♀️💨", "¿Tanto lo dudas? 🥺",
+        "Ruta bloqueada 🚫", "El mar espera 🌊", "Te quedas sin espacio 😱",
+        "Es mejor decir que sí ✨", "No se puede presionar 🛡️", "¿Otra vez? 🙄",
+        "Buen intento 🚀", "Sigues intentando 😅", "El sí sigue creciendo 👀",
+        "Insistente 💪", "No vas a poder 😜", "Movimiento en vano 🧭",
+        "Por ahí no 💨", "La playa suena mejor 🌅", "Sigue participando 🎟️",
+        "Opción denegada ❌", "Elige el otro 💚", "Aún con dudas 🧐",
+        "Casi le das 😜", "Menos opciones ⏳", "Este botón no cede 🪄",
+        "Es inevitable 🪐", "Más de 30 intentos 📈", "Un clic al sí y listo 😉",
+        "¡Ya me cansé! 🏳️"
     ];
-    let intentos = 0;
 
-    function rechazar() {
-        escala += 0.35;
-        document.getElementById("si").style.transform = `scale(${escala})`;
-
-        if (intentos < textosNo.length) {
-            document.getElementById("no").innerText = textosNo[intentos];
-        } else {
-            document.getElementById("no").innerText = `No #${intentos + 1} (imposible esquivar el SÍ)`;
-        }
-        intentos++;
+    function handleNoInteraction(e) {
+        // En mouse responde al enter; en táctil responde al pointerdown
+        if (e.type === 'pointerdown' && e.pointerType === 'mouse') return;
+        
+        processNoAction(e);
     }
 
-    function aceptar() {
-        document.body.innerHTML = `
-            <div style="
-                color:white;
-                text-align:center;
-                font-family:'Segoe UI', sans-serif;">
-                <h1 style="color:#b18cff;">Sabía que sí 💜</h1>
-                <p>Prometo cuidarte y hacer que valga la pena.</p>
-            </div>
-            <div class="credits">
-                From: Marcos<br>
-                To: Jessica
-            </div>
-        `;
+    function handleNoClick(e) {
+        // En touch ya se procesó con pointerdown; evitamos doble salto
+        if (e.pointerType === 'touch') return;
+        processNoAction(e);
+    }
+
+    function processNoAction(e) {
+        if (e) e.preventDefault();
+
+        // Si superó los mensajes, pasa al estado de rendición
+        if (attempts >= messages.length - 1) {
+            btnYes.style.display = 'none';
+            btnNo.style.display = 'none';
+            btnGiveUp.style.display = 'inline-block';
+            
+            // Limitamos la escala máxima a 1.3 para que no desborde la tarjeta
+            const cappedScale = Math.min(scale, 1.3);
+            btnGiveUp.style.transform = `scale(${cappedScale})`;
+            mainTitle.innerText = "Está bien, me rindo 🏳️";
+            return;
+        }
+
+        dodge();
+    }
+
+    function dodge() {
+        if (!isDetached) {
+            document.body.appendChild(btnNo);
+            btnNo.style.position = 'fixed';
+            isDetached = true;
+        }
+
+        btnNo.innerText = messages[attempts];
+        attempts++;
+
+        // Crece el botón Sí, con un tope razonable para celulares
+        if (scale < 2.2) {
+            scale += 0.06;
+            btnYes.style.transform = `scale(${scale})`;
+        }
+
+        const padding = 16;
+        const btnW = btnNo.offsetWidth || 120;
+        const btnH = btnNo.offsetHeight || 45;
+
+        const screenW = window.innerWidth;
+        const screenH = window.innerHeight;
+
+        const maxX = Math.max(padding, screenW - btnW - padding);
+        const maxY = Math.max(padding, screenH - btnH - padding);
+
+        const yesRect = btnYes.getBoundingClientRect();
+
+        let randomX, randomY;
+        let overlapping = true;
+        let tries = 0;
+
+        while (overlapping && tries < 60) {
+            randomX = Math.floor(Math.random() * (maxX - padding)) + padding;
+            randomY = Math.floor(Math.random() * (maxY - padding)) + padding;
+
+            const margin = 30;
+            const overlapsX = (randomX + btnW > yesRect.left - margin) && (randomX < yesRect.right + margin);
+            const overlapsY = (randomY + btnH > yesRect.top - margin) && (randomY < yesRect.bottom + margin);
+
+            if (!overlapsX || !overlapsY) {
+                overlapping = false;
+            }
+            tries++;
+        }
+
+        btnNo.style.left = `${randomX}px`;
+        btnNo.style.top = `${randomY}px`;
+    }
+
+    function startSecondGame() {
+        btnNo.style.display = 'none';
+        document.getElementById('game-one').style.display = 'none';
+        document.getElementById('game-two').style.display = 'flex';
+    }
+
+    function spinRoulette() {
+        const wheel = document.getElementById('roulette-wheel');
+        const status = document.getElementById('roulette-status');
+        const spinBtn = document.getElementById('spin-btn');
+        
+        spinBtn.disabled = true;
+        status.innerText = "Girando...";
+        
+        const randomRotation = 1440 + Math.floor(Math.random() * 360);
+        wheel.style.transform = `rotate(${randomRotation}deg)`;
+
+        setTimeout(() => {
+            wheel.innerText = "Playa 🌅";
+            status.innerText = "Resultado: Salida a la playa";
+            
+            setTimeout(() => {
+                document.getElementById('game-two').style.display = 'none';
+                document.getElementById('success-content').style.display = 'flex';
+                document.getElementById('final-message').innerText = "La ruleta decidió por ti. Nos vemos en la playa 🌅✨";
+            }, 1800);
+        }, 3000);
+    }
+
+    function acceptOffer(detail) {
+        btnNo.style.display = 'none';
+        document.getElementById('game-one').style.display = 'none';
+        document.getElementById('game-two').style.display = 'none';
+        document.getElementById('success-content').style.display = 'flex';
+    }
+
+    function selectChip(element, group) {
+        const container = element.parentElement;
+        const chips = container.querySelectorAll('.chip');
+        chips.forEach(c => c.classList.remove('active'));
+        element.classList.add('active');
+
+        if (group === 'time') {
+            selectedTime = element.innerText;
+        } else if (group === 'plan') {
+            selectedPlan = element.innerText;
+        }
+    }
+
+    async function sendPlanDetails(e) {
+        e.preventDefault();
+        const noteText = document.getElementById('note-text').value.trim();
+        const noteBtn = document.getElementById('btn-send-note');
+        const form = document.getElementById('extra-note-form');
+
+        noteBtn.disabled = true;
+        noteBtn.innerText = "Enviando...";
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/56da4f3d1ec204ccee82c7dce9ec2e71", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json', 
+                    'Accept': 'application/json' 
+                },
+                body: JSON.stringify({
+                    _subject: "¡Respuesta recibida: Salida a la playa!",
+                    Momento: selectedTime,
+                    Actividad: selectedPlan,
+                    Mensaje: noteText || "(Sin mensaje adicional)",
+                    Intentos_Boton_No: attempts,
+                    _captcha: "false"
+                })
+            });
+
+            if (response.ok) {
+                form.innerHTML = '<p style="color: #4ade80; font-size: 15px; margin-top: 15px; font-weight: 500;">¡Plan confirmado y enviado! 🌅✨</p>';
+            } else {
+                noteBtn.disabled = false;
+                noteBtn.innerText = "Reintentar";
+            }
+        } catch (err) {
+            noteBtn.disabled = false;
+            noteBtn.innerText = "Reintentar";
+        }
     }
 </script>
-
-</body>
-</html>
