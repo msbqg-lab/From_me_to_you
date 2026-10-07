@@ -4,6 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nuestro Tiempo Juntos 💖 | 22 de Septiembre</title>
+
+  <!-- Metadatos de Vista Previa para WhatsApp / Redes Sociales (Open Graph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nuestro Tiempo Juntos">
+  <meta property="og:title" content="Nuestro Tiempo Juntos 💖">
+  <meta property="og:description" content="Desde el martes 22 de septiembre... Cada segundo a tu lado cuenta. ✨🎵">
+  <!-- Imagen romántica nocturna alusiva en CDN (no requiere subir archivos adicionales) -->
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Metadatos para Twitter / Telegram -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuestro Tiempo Juntos 💖">
+  <meta name="twitter:description" content="Desde el martes 22 de septiembre... Cada segundo a tu lado cuenta. ✨🎵">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
   
   <!-- Favicon de Corazón -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec4899'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E">
@@ -374,7 +392,7 @@
     let isUserSeeking = false;
     let isMuted = false;
 
-    // Configuración inicial de volumen
+    // Volumen inicial
     audio.volume = volumeSlider.value / 100;
 
     function formatTime(seconds) {
@@ -405,7 +423,6 @@
       }
     }
 
-    // Eventos nativos del elemento de audio
     audio.addEventListener('play', () => setPlayingUI(true));
     audio.addEventListener('pause', () => setPlayingUI(false));
 
@@ -428,19 +445,17 @@
       }
     });
 
-    // Control Play / Pausa
     btnPlayPause.addEventListener('click', () => {
       if (audio.paused) {
         audio.play().catch(e => {
           console.warn("Autoplay bloqueado:", e);
-          statusMessage.textContent = "Haz clic para iniciar";
+          statusMessage.textContent = "Toca para reproducir";
         });
       } else {
         audio.pause();
       }
     });
 
-    // Control Barra de Progreso
     progressBar.addEventListener('input', () => {
       isUserSeeking = true;
       if (audio.duration) {
@@ -456,7 +471,6 @@
       isUserSeeking = false;
     });
 
-    // Control de Volumen
     volumeSlider.addEventListener('input', (e) => {
       const vol = e.target.value;
       audio.volume = vol / 100;
@@ -473,7 +487,6 @@
       if (window.lucide) lucide.createIcons();
     });
 
-    // Silenciar / Desilenciar
     btnMute.addEventListener('click', () => {
       isMuted = !isMuted;
       audio.muted = isMuted;
@@ -488,7 +501,6 @@
       if (window.lucide) lucide.createIcons();
     });
 
-    // Bucle (Loop)
     btnLoop.addEventListener('click', () => {
       audio.loop = !audio.loop;
       if (audio.loop) {
