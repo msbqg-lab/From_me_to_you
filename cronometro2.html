@@ -1,81 +1,69 @@
+Aquí tienes el código HTML completo y listo con la foto circular de **Ali Gatie** (`./ali-gatie.jpg`) integrada en el centro del vinilo:
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuestro Tiempo Juntos 💖 | 22 de Septiembre</title>
+  <title>Nuestro Amor • Desde el 22 de Septiembre 💖</title>
 
-  <!-- Metadatos de Vista Previa para WhatsApp / Redes Sociales (Open Graph) -->
+  <!-- Favicon miniatura SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='30%25' r='70%25'%3E%3Cstop offset='0%25' stop-color='%23fb7185'/%3E%3Cstop offset='60%25' stop-color='%23e11d48'/%3E%3Cstop offset='100%25' stop-color='%23881337'/%3E%3C/radialGradient%3E%3Cfilter id='b' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeDropShadow dx='0' dy='4' stdDeviation='6' flood-color='%23f43f5e' flood-opacity='0.6'/%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M50 88 C20 62 4 44 4 27 C4 13 14 3 28 3 C37 3 45 8 50 16 C55 8 63 3 72 3 C86 3 96 13 96 27 C96 44 80 62 50 88 Z' fill='url(%23g)' filter='url(%23b)'/%3E%3Ccircle cx='32' cy='22' r='4' fill='white' opacity='0.7'/%3E%3C/svg%3E">
+
+  <!-- OpenGraph y Twitter Cards -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Nuestro Tiempo Juntos">
-  <meta property="og:title" content="Nuestro Tiempo Juntos 💖">
-  <meta property="og:description" content="Desde el martes 22 de septiembre... Cada segundo a tu lado cuenta. ✨🎵">
-  <!-- Imagen romántica nocturna alusiva en CDN (no requiere subir archivos adicionales) -->
-  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
-  <meta property="og:image:secure_url" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-
-  <!-- Metadatos para Twitter / Telegram -->
+  <meta property="og:title" content="Nuestro Tiempo Juntos 💖 | Desde el 22 de Septiembre">
+  <meta property="og:description" content="Cada segundo a tu lado cuenta una hermosa historia. Mira cuánto tiempo llevamos construyendo nuestro amor.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&h=630&q=80">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Nuestro Tiempo Juntos 💖">
-  <meta name="twitter:description" content="Desde el martes 22 de septiembre... Cada segundo a tu lado cuenta. ✨🎵">
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=1200&auto=format&fit=crop">
-  
-  <!-- Favicon de Corazón -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ec4899'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E">
+  <meta name="twitter:title" content="Nuestro Tiempo Juntos 💖 | 22 de Septiembre">
+  <meta name="twitter:description" content="Cronómetro de nuestra historia de amor en tiempo real.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&h=630&q=80">
 
-  <!-- Tailwind CSS & Fuentes -->
+  <!-- Tailwind CSS & Google Fonts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
-    .font-serif-quote {
-      font-family: 'Playfair Display', serif;
+    .font-serif-romantic {
+      font-family: 'Playfair Display', Georgia, serif;
     }
     .font-mono-numbers {
       font-family: 'JetBrains Mono', monospace;
       font-variant-numeric: tabular-nums;
     }
     .glass-card {
-      background: rgba(15, 23, 42, 0.82);
+      background: rgba(15, 17, 28, 0.85);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 30px 65px -15px rgba(0, 0, 0, 0.8);
+      border: 1px solid rgba(244, 63, 94, 0.22);
+      box-shadow: 0 35px 80px -15px rgba(0, 0, 0, 0.9), 0 0 50px -10px rgba(225, 29, 72, 0.15);
     }
     .glass-unit {
-      background: rgba(30, 41, 59, 0.55);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(28, 25, 38, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    @keyframes pulse-glow-anim {
-      0%, 100% {
-        filter: drop-shadow(0 0 12px rgba(244, 63, 94, 0.35));
-      }
-      50% {
-        filter: drop-shadow(0 0 24px rgba(236, 72, 153, 0.6));
-      }
+    .glass-unit:hover {
+      border-color: rgba(244, 63, 94, 0.45);
+      box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.25);
     }
-    .pulse-glow {
-      animation: pulse-glow-anim 3s infinite ease-in-out;
+    .polaroid-frame {
+      background: #ffffff;
+      box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.65), 0 0 25px rgba(225, 29, 72, 0.2);
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .ambient-sphere {
-      position: fixed;
-      border-radius: 9999px;
-      filter: blur(120px);
-      pointer-events: none;
-      opacity: 0.4;
-      z-index: 0;
+    .polaroid-frame:hover {
+      transform: scale(1.02) rotate(0deg) !important;
     }
     @keyframes spin-vinyl {
       from { transform: rotate(0deg); }
@@ -87,10 +75,23 @@
     .paused-vinyl {
       animation-play-state: paused;
     }
-    @keyframes eq1 { 0%, 100% { height: 6px; } 50% { height: 24px; } }
-    @keyframes eq2 { 0%, 100% { height: 22px; } 50% { height: 8px; } }
-    @keyframes eq3 { 0%, 100% { height: 10px; } 50% { height: 26px; } }
-    @keyframes eq4 { 0%, 100% { height: 24px; } 50% { height: 10px; } }
+    @keyframes pulse-heart {
+      0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(244, 63, 94, 0.45));
+        transform: scale(1);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px rgba(244, 63, 94, 0.8));
+        transform: scale(1.03);
+      }
+    }
+    .heart-glow {
+      animation: pulse-heart 2.6s infinite ease-in-out;
+    }
+    @keyframes eq1 { 0%, 100% { height: 6px; } 50% { height: 26px; } }
+    @keyframes eq2 { 0%, 100% { height: 24px; } 50% { height: 8px; } }
+    @keyframes eq3 { 0%, 100% { height: 12px; } 50% { height: 30px; } }
+    @keyframes eq4 { 0%, 100% { height: 28px; } 50% { height: 10px; } }
 
     .eq-playing .bar-1 { animation: eq1 0.75s ease-in-out infinite; }
     .eq-playing .bar-2 { animation: eq2 0.85s ease-in-out infinite; }
@@ -103,227 +104,495 @@
       height: 14px;
       border-radius: 9999px;
       background: #f43f5e;
-      box-shadow: 0 0 10px rgba(244, 63, 94, 0.9);
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.9);
       cursor: pointer;
       transition: transform 0.15s ease;
     }
     input[type="range"]::-webkit-slider-thumb:hover {
       transform: scale(1.3);
     }
+    #floatingHeartsCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .lyrics-container {
+      scrollbar-width: thin;
+      scrollbar-color: rgba(244, 63, 94, 0.3) transparent;
+      scroll-behavior: smooth;
+    }
+    .lyrics-container::-webkit-scrollbar {
+      width: 4px;
+    }
+    .lyrics-container::-webkit-scrollbar-thumb {
+      background: rgba(244, 63, 94, 0.4);
+      border-radius: 9999px;
+    }
+    .lyric-line {
+      transition: all 0.35s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .lyric-line.active {
+      color: #ffe4e6;
+      font-weight: 700;
+      transform: scale(1.03);
+      text-shadow: 0 0 16px rgba(244, 63, 94, 0.75);
+    }
   </style>
 </head>
-<body class="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-start p-4 sm:p-6 relative overflow-x-hidden selection:bg-rose-500 selection:text-white">
+<body class="min-h-screen bg-[#090b14] text-slate-100 flex items-center justify-center p-3 sm:p-6 lg:p-8 relative overflow-x-hidden selection:bg-rose-500 selection:text-white">
+
+  <!-- Canvas de fondo para corazones flotantes -->
+  <canvas id="floatingHeartsCanvas"></canvas>
 
   <!-- Luces ambientales de fondo -->
-  <div class="ambient-sphere w-72 sm:w-96 h-72 sm:h-96 bg-rose-600/25 -top-16 -left-16"></div>
-  <div class="ambient-sphere w-72 sm:w-96 h-72 sm:h-96 bg-purple-600/20 -bottom-16 -right-16"></div>
+  <div class="fixed w-80 sm:w-[32rem] h-80 sm:h-[32rem] bg-rose-600/15 rounded-full blur-[140px] -top-20 -left-20 pointer-events-none animate-pulse"></div>
+  <div class="fixed w-80 sm:w-[34rem] h-80 sm:h-[34rem] bg-pink-700/10 rounded-full blur-[140px] -bottom-24 -right-24 pointer-events-none animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="fixed w-72 sm:w-96 h-72 sm:h-96 bg-purple-950/30 rounded-full blur-[120px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
 
-  <!-- Audio nativo con archivo local MP3 -->
-  <audio id="audioPlayer" preload="metadata" loop>
-    <source src="its-you.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
+  <!-- Audio HTML5 para archivo local MP3 -->
+  <audio id="audioPlayer" src="./its-you.mp3" preload="metadata"></audio>
 
-  <!-- Contenedor Vertical Optimizado para Móvil -->
-  <main class="relative z-10 w-full max-w-md flex flex-col gap-6 my-4">
-    
-    <!-- TARJETA PRINCIPAL: CRONÓMETRO -->
-    <div class="glass-card rounded-3xl p-6 sm:p-7 border border-rose-500/20 shadow-2xl">
+  <main class="relative z-10 w-full max-w-3xl glass-card rounded-3xl p-5 sm:p-8 md:p-10 my-4 sm:my-8 border border-rose-500/25">
+
+    <!-- Encabezado Romántico -->
+    <header class="text-center mb-7 space-y-3">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-500/15 border border-rose-400/30 text-rose-300 text-xs sm:text-sm font-medium tracking-wide heart-glow">
+        <i data-lucide="heart" class="w-3.5 h-3.5 fill-rose-400 text-rose-400"></i>
+        <span class="inline-block w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
+        <span>Nuestra Historia de Amor</span>
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-300"></i>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-rose-100 via-pink-200 to-rose-400 bg-clip-text text-transparent font-serif-romantic">
+        Desde el 22 de Septiembre
+      </h1>
+
+      <p class="text-sm sm:text-base text-slate-300 max-w-lg mx-auto font-light leading-relaxed">
+        Cada segundo a tu lado es un instante que guardo para siempre en el corazón.
+      </p>
+    </header>
+
+    <!-- Sección de Fotos Polaroid de la Pareja -->
+    <section class="mb-8" aria-label="Nuestros Recuerdos">
+      <div class="flex flex-col items-center">
+        <!-- Marco Polaroid -->
+        <div class="polaroid-frame p-3 sm:p-4 rounded-xl max-w-xs sm:max-w-sm w-full -rotate-1 border border-rose-100/70">
+          <div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-slate-900 shadow-inner group">
+            <img 
+              id="memoryPhoto" 
+              src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" 
+              alt="Momento romántico de pareja" 
+              class="w-full h-full object-cover transition duration-700 group-hover:scale-105"
+            />
+            
+            <!-- Etiqueta sobrepuesta -->
+            <div class="absolute bottom-2 right-2 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[11px] text-rose-300 font-mono-numbers flex items-center gap-1.5">
+              <i data-lucide="heart" class="w-3 h-3 fill-rose-400 text-rose-400"></i>
+              <span id="photoBadgeIndex">1 / 4</span>
+            </div>
+
+            <!-- Botones de navegación sobre la foto -->
+            <button id="btnPrevPhoto" type="button" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition active:scale-95 cursor-pointer opacity-80 hover:opacity-100" title="Foto anterior">
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            </button>
+            <button id="btnNextPhoto" type="button" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center backdrop-blur-sm transition active:scale-95 cursor-pointer opacity-80 hover:opacity-100" title="Siguiente foto">
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+
+          <!-- Pie de foto Polaroid -->
+          <div class="pt-3 pb-1 text-center">
+            <p id="memoryCaption" class="text-slate-800 font-serif-romantic italic font-semibold text-sm sm:text-base">
+              "Juntos en cada paso del camino..."
+            </p>
+          </div>
+        </div>
+
+        <!-- Controles para subir fotos propias de la pareja -->
+        <div class="flex items-center gap-3 mt-4 text-xs">
+          <label class="px-3.5 py-1.5 rounded-full bg-rose-500/15 hover:bg-rose-500/25 border border-rose-400/30 text-rose-300 cursor-pointer flex items-center gap-1.5 transition active:scale-95">
+            <i data-lucide="image-plus" class="w-3.5 h-3.5"></i>
+            <span>Subir nuestra foto</span>
+            <input type="file" id="userPhotoInput" accept="image/*" class="hidden">
+          </label>
+
+          <button id="btnCyclePhoto" type="button" class="px-3.5 py-1.5 rounded-full bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-slate-300 flex items-center gap-1.5 transition active:scale-95 cursor-pointer">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-rose-400"></i>
+            <span>Ver más recuerdos</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bloques del Cronómetro -->
+    <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-7 text-center" aria-label="Tiempo transcurrido juntos">
       
-      <!-- Encabezado -->
-      <header class="text-center mb-6 space-y-2">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-500/10 border border-rose-500/25 text-rose-300 text-xs font-semibold tracking-wide">
-          <span class="inline-block w-2 h-2 rounded-full bg-rose-400 animate-ping"></span>
-          <span class="inline-block w-2 h-2 rounded-full bg-rose-400 -ml-3"></span>
-          <span>Nuestro Tiempo Juntos</span>
+      <!-- Días -->
+      <article class="glass-unit rounded-2xl p-4 sm:p-5 flex flex-col justify-center items-center border-rose-500/20">
+        <span id="days" class="font-mono-numbers text-3xl sm:text-5xl font-bold text-rose-100 tracking-tight">0</span>
+        <span class="mt-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-rose-400">Días</span>
+      </article>
+
+      <!-- Horas -->
+      <article class="glass-unit rounded-2xl p-4 sm:p-5 flex flex-col justify-center items-center border-rose-500/20">
+        <span id="hours" class="font-mono-numbers text-3xl sm:text-5xl font-bold text-slate-100 tracking-tight">00</span>
+        <span class="mt-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-rose-400">Horas</span>
+      </article>
+
+      <!-- Minutos -->
+      <article class="glass-unit rounded-2xl p-4 sm:p-5 flex flex-col justify-center items-center border-rose-500/20">
+        <span id="minutes" class="font-mono-numbers text-3xl sm:text-5xl font-bold text-slate-100 tracking-tight">00</span>
+        <span class="mt-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-rose-400">Minutos</span>
+      </article>
+
+      <!-- Segundos -->
+      <article class="glass-unit rounded-2xl p-4 sm:p-5 flex flex-col justify-center items-center ring-1 ring-rose-400/40 heart-glow">
+        <span id="seconds" class="font-mono-numbers text-3xl sm:text-5xl font-bold text-rose-300 tracking-tight">00</span>
+        <span class="mt-2 text-xs sm:text-sm font-semibold tracking-wider uppercase text-rose-300">Segundos</span>
+      </article>
+
+    </section>
+
+    <!-- Reproductor Personalizado de Música (Local: its-you.mp3) -->
+    <section class="glass-unit rounded-2xl p-4 sm:p-6 relative overflow-hidden border border-rose-500/25 shadow-2xl">
+      <div class="flex flex-col sm:flex-row items-center gap-5 sm:gap-6">
+        
+        <!-- Disco de Vinilo con Foto Circular de Ali Gatie -->
+        <div class="relative shrink-0">
+          <div id="vinylDisk" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-tr from-stone-900 via-neutral-900 to-rose-950 border-2 border-rose-500/30 shadow-xl flex items-center justify-center spinning-vinyl paused-vinyl relative overflow-hidden">
+            <div class="absolute inset-2 rounded-full border border-rose-500/10 pointer-events-none"></div>
+            <div class="absolute inset-4 rounded-full border border-rose-500/15 pointer-events-none"></div>
+            <div class="absolute inset-6 rounded-full border border-rose-500/10 pointer-events-none"></div>
+            
+            <!-- Centro del Vinilo: Foto de Ali Gatie -->
+            <div class="w-12 h-12 rounded-full overflow-hidden shadow-lg relative z-10 border-2 border-rose-300/60 shrink-0">
+              <img src="./ali-gatie.jpg" alt="Ali Gatie" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+          <!-- Resplandor reactivo -->
+          <div id="vinylGlow" class="absolute inset-0 rounded-full bg-rose-500/25 filter blur-xl opacity-0 transition-opacity duration-500 -z-10"></div>
         </div>
-        
-        <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white via-rose-100 to-purple-200 bg-clip-text text-transparent">
-          Tiempo Transcurrido
-        </h1>
-        
-        <p class="text-xs sm:text-sm text-slate-400">
-          Desde el <span class="text-rose-300 font-medium">martes 22 de septiembre</span>
-        </p>
-      </header>
 
-      <!-- Bloques del Cronómetro -->
-      <section class="grid grid-cols-2 gap-3 mb-6 text-center" aria-label="Cronómetro transcurrido">
-        
-        <!-- Días -->
-        <article class="glass-unit rounded-2xl p-4 flex flex-col justify-center items-center">
-          <span id="days" class="font-mono-numbers text-3xl sm:text-4xl font-bold text-white tracking-tight">0</span>
-          <span class="mt-1 text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-rose-400">Días</span>
-        </article>
-
-        <!-- Horas -->
-        <article class="glass-unit rounded-2xl p-4 flex flex-col justify-center items-center">
-          <span id="hours" class="font-mono-numbers text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">00</span>
-          <span class="mt-1 text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-rose-400">Horas</span>
-        </article>
-
-        <!-- Minutos -->
-        <article class="glass-unit rounded-2xl p-4 flex flex-col justify-center items-center">
-          <span id="minutes" class="font-mono-numbers text-3xl sm:text-4xl font-bold text-slate-100 tracking-tight">00</span>
-          <span class="mt-1 text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-rose-400">Minutos</span>
-        </article>
-
-        <!-- Segundos -->
-        <article class="glass-unit rounded-2xl p-4 flex flex-col justify-center items-center ring-1 ring-rose-500/30 pulse-glow">
-          <span id="seconds" class="font-mono-numbers text-3xl sm:text-4xl font-bold text-rose-300 tracking-tight">00</span>
-          <span class="mt-1 text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-rose-300">Segundos</span>
-        </article>
-
-      </section>
-
-      <!-- REPRODUCTOR PERSONALIZADO -->
-      <section class="glass-unit rounded-2xl p-4 relative overflow-hidden border border-rose-500/20">
-        <div class="flex items-center gap-4">
+        <!-- Información de la pista y controles -->
+        <div class="flex-1 w-full flex flex-col justify-center">
           
-          <!-- Disco de Vinilo -->
-          <div class="relative shrink-0">
-            <div id="vinylDisk" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-slate-900 via-neutral-900 to-slate-800 border-2 border-slate-700/60 shadow-xl flex items-center justify-center spinning-vinyl paused-vinyl relative overflow-hidden">
-              <div class="absolute inset-1.5 rounded-full border border-slate-700/30"></div>
-              <div class="absolute inset-3 rounded-full border border-slate-700/20"></div>
-              
-              <!-- Centro -->
-              <div class="w-7 h-7 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center shadow-inner relative z-10">
-                <i data-lucide="heart" class="w-3.5 h-3.5 text-white fill-current"></i>
+          <div class="flex items-center justify-between gap-3 mb-2">
+            <div>
+              <div class="flex items-center gap-1.5">
+                <h2 class="text-base sm:text-lg font-bold text-rose-100 tracking-wide font-serif-romantic">It's You</h2>
+                <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400"></i>
               </div>
-            </div>
-            <div id="vinylGlow" class="absolute inset-0 rounded-full bg-rose-500/20 filter blur-lg opacity-0 transition-opacity duration-500 -z-10"></div>
-          </div>
-
-          <!-- Info & Ecualizador -->
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center justify-between gap-2 mb-1">
-              <div class="truncate">
-                <h2 class="text-sm sm:text-base font-bold text-white truncate">It's You</h2>
-                <p class="text-xs text-rose-300 font-medium truncate">Ali Gatie</p>
-              </div>
-
-              <!-- Ecualizador -->
-              <div id="equalizer" class="flex items-end gap-1 h-5 px-1 shrink-0">
-                <span class="w-1 bg-rose-400 rounded-full h-1 bar-1"></span>
-                <span class="w-1 bg-fuchsia-400 rounded-full h-1.5 bar-2"></span>
-                <span class="w-1 bg-pink-400 rounded-full h-1 bar-3"></span>
-                <span class="w-1 bg-purple-400 rounded-full h-2 bar-4"></span>
-              </div>
+              <p class="text-xs sm:text-sm text-rose-300/80 font-medium">Ali Gatie • Nuestra Canción Especial</p>
             </div>
 
-            <!-- Barra de Progreso -->
-            <div class="space-y-1">
-              <input 
-                type="range" 
-                id="progressBar" 
-                min="0" 
-                max="100" 
-                value="0" 
-                step="0.1" 
-                class="w-full h-1.5 bg-slate-700/60 rounded-lg appearance-none cursor-pointer accent-rose-400"
-              />
-              <div class="flex justify-between text-[10px] font-mono-numbers text-slate-400">
-                <span id="currentTimeLabel">0:00</span>
-                <span id="totalDurationLabel">3:32</span>
-              </div>
+            <!-- Ecualizador reactivo -->
+            <div id="equalizer" class="flex items-end gap-1 h-7 px-2">
+              <span class="w-1 bg-rose-400 rounded-full h-1.5 bar-1 transition-all duration-300"></span>
+              <span class="w-1 bg-pink-400 rounded-full h-2 bar-2 transition-all duration-300"></span>
+              <span class="w-1 bg-rose-500 rounded-full h-1.5 bar-3 transition-all duration-300"></span>
+              <span class="w-1 bg-fuchsia-400 rounded-full h-2.5 bar-4 transition-all duration-300"></span>
             </div>
           </div>
 
-        </div>
-
-        <!-- Controles Inferiores -->
-        <div class="flex items-center justify-between mt-3 pt-3 border-t border-slate-700/40">
-          <div class="flex items-center gap-2">
-            <button 
-              id="btnPlayPause" 
-              type="button" 
-              class="w-10 h-10 rounded-full bg-gradient-to-r from-rose-500 to-purple-600 hover:from-rose-400 hover:to-purple-500 text-white flex items-center justify-center shadow-md shadow-rose-500/30 active:scale-95 transition cursor-pointer"
-            >
-              <i id="playIcon" data-lucide="play" class="w-4 h-4 ml-0.5 fill-current"></i>
-              <i id="pauseIcon" data-lucide="pause" class="w-4 h-4 fill-current hidden"></i>
-            </button>
-
-            <button 
-              id="btnLoop" 
-              type="button" 
-              class="p-2 rounded-lg bg-slate-800/70 text-rose-400 border border-rose-500/20 active:scale-95 transition"
-              title="Bucle activado"
-            >
-              <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
-            </button>
-          </div>
-
-          <!-- Volumen -->
-          <div class="flex items-center gap-1.5">
-            <button id="btnMute" type="button" class="text-slate-400 hover:text-white transition p-1">
-              <i id="volumeIcon" data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-            </button>
+          <!-- Barra de progreso -->
+          <div class="space-y-1 mb-4">
             <input 
               type="range" 
-              id="volumeSlider" 
+              id="progressBar" 
               min="0" 
               max="100" 
-              value="80" 
-              class="w-16 h-1 bg-slate-700/70 rounded-lg appearance-none cursor-pointer accent-rose-400"
+              value="0" 
+              step="0.1" 
+              class="w-full h-1.5 bg-slate-700/60 rounded-lg appearance-none cursor-pointer accent-rose-500"
             />
+            <div class="flex justify-between text-[11px] font-mono-numbers text-slate-400">
+              <span id="currentTimeLabel">0:00</span>
+              <span id="totalDurationLabel">0:00</span>
+            </div>
           </div>
+
+          <!-- Botones de Acción (Play/Pause, Loop, Volumen) -->
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            
+            <div class="flex items-center gap-3">
+              <!-- Botón Play / Pause -->
+              <button 
+                id="btnPlayPause" 
+                type="button" 
+                class="w-12 h-12 rounded-full bg-gradient-to-r from-rose-500 via-pink-600 to-rose-700 hover:from-rose-400 hover:to-pink-500 text-white font-bold flex items-center justify-center shadow-lg shadow-rose-500/30 active:scale-95 transition cursor-pointer"
+                title="Reproducir / Pausar"
+              >
+                <i id="playIcon" data-lucide="play" class="w-5 h-5 ml-0.5 fill-current"></i>
+                <i id="pauseIcon" data-lucide="pause" class="w-5 h-5 fill-current hidden"></i>
+              </button>
+
+              <!-- Repetición continua -->
+              <button 
+                id="btnLoop" 
+                type="button" 
+                class="p-2.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 text-rose-400 border border-rose-400/30 active:scale-95 transition cursor-pointer"
+                title="Repetición continua activada"
+              >
+                <i data-lucide="repeat" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Control de volumen -->
+            <div class="flex items-center gap-2">
+              <button id="btnMute" type="button" class="text-slate-400 hover:text-rose-300 transition p-1 cursor-pointer">
+                <i id="volumeIcon" data-lucide="volume-2" class="w-4 h-4"></i>
+              </button>
+              <input 
+                type="range" 
+                id="volumeSlider" 
+                min="0" 
+                max="100" 
+                value="85" 
+                class="w-20 sm:w-24 h-1 bg-slate-700/70 rounded-lg appearance-none cursor-pointer accent-rose-500"
+              />
+            </div>
+
+          </div>
+
         </div>
 
-        <div id="playerStatus" class="mt-2 text-center text-[11px] text-slate-400">
-          <span id="statusMessage">Listo para reproducir</span>
-        </div>
-      </section>
+      </div>
 
-      <!-- Pie del cronómetro -->
-      <footer class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
-        <div class="flex items-center gap-1.5">
-          <i data-lucide="calendar-heart" class="w-3.5 h-3.5 text-rose-400"></i>
-          <span>Inicio: <strong class="text-slate-200">22 de Septiembre</strong></span>
-        </div>
-        <div class="flex items-center gap-1.5">
-          <i data-lucide="clock" class="w-3.5 h-3.5 text-emerald-400"></i>
-          <span id="currentDateLabel" class="font-mono-numbers">Sincronizando...</span>
-        </div>
-      </footer>
-
-    </div>
-
-    <!-- TARJETA INFERIOR: CITA DE ANTOINE DE SAINT-EXUPÉRY -->
-    <article class="glass-card rounded-3xl p-6 sm:p-7 border border-purple-500/20 shadow-2xl relative overflow-hidden">
-      <div class="flex justify-center mb-3">
-        <span class="inline-flex p-2 rounded-full bg-rose-500/10 text-rose-400">
-          <i data-lucide="quote" class="w-5 h-5"></i>
+      <!-- Barra de estado -->
+      <div id="playerStatus" class="mt-4 pt-3 border-t border-slate-700/40 text-[12px] text-slate-400 flex items-center justify-between">
+        <span id="statusMessage">Canción lista para reproducir</span>
+        <span class="text-rose-300/70 text-[11px] flex items-center gap-1">
+          <span>Dale play para escuchar juntos</span>
+          <i data-lucide="heart" class="w-3 h-3 text-rose-400 fill-rose-400"></i>
         </span>
       </div>
+    </section>
 
-      <blockquote class="font-serif-quote text-slate-200 text-sm sm:text-base leading-relaxed text-center italic space-y-2">
+    <!-- Letra en tiempo real (Sincronizada con el audio) -->
+    <section class="mt-6 p-4 sm:p-5 rounded-2xl glass-unit border-rose-500/20 text-center relative overflow-hidden" aria-label="Letra de la canción">
+      <div class="flex items-center justify-center gap-2 mb-3 text-xs uppercase tracking-wider font-semibold text-rose-400">
+        <i data-lucide="music-2" class="w-4 h-4 text-rose-400"></i>
+        <span>Letra en vivo • "It's You"</span>
+      </div>
+
+      <!-- Contenedor con scroll automático -->
+      <div id="lyricsContainer" class="lyrics-container h-36 sm:h-44 overflow-y-auto px-3 sm:px-6 space-y-3">
+        <!-- Generado dinámicamente con JavaScript -->
+      </div>
+      <p class="mt-2 text-[11px] text-slate-500 italic">Puedes hacer clic en cualquier línea para ir a ese segundo</p>
+    </section>
+
+    <!-- MENSAJE ESPECIAL: Pensado principalmente para que te recuerde y te sienta cerca -->
+    <section class="mt-6 p-5 sm:p-7 rounded-2xl bg-gradient-to-br from-rose-950/40 via-slate-900/60 to-purple-950/40 border border-rose-500/30 text-left relative overflow-hidden shadow-xl" aria-label="Mensaje para recordarme">
+      <div class="flex items-center gap-2.5 mb-4 text-rose-300">
+        <div class="p-2 rounded-xl bg-rose-500/20 text-rose-400 border border-rose-400/30">
+          <i data-lucide="message-heart" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="font-serif-romantic text-base sm:text-lg font-bold text-rose-100">Si estás aquí hoy... es para que nunca me olvides 💖</h3>
+          <p class="text-xs text-rose-300/80">Guarda este rincón para cuando quieras sentirme cerca</p>
+        </div>
+      </div>
+
+      <div class="space-y-3.5 text-xs sm:text-sm text-slate-200/90 leading-relaxed font-light">
         <p>
+          Si entraste a este enlace, solo quiero que cierres los ojos un momento y me recuerdes. Recuerda mi voz, cómo te miro cuando nadie más está prestando atención, nuestras risas de la nada y esa complicidad que solo existe entre tú y yo.
+        </p>
+        <p>
+          Y si por casualidad estás aquí después de un día difícil, de una discusión tonta o de alguna torpeza mía... perdóname con esa ternura tuya. A veces cometo tonterías y me equivoco, pero jamás dudes de que eres lo más importante para mí. Ningún malentendido ni ningún orgullo tonto puede competir con todo lo que empezamos a construir aquel <strong class="text-rose-300 font-medium">22 de septiembre</strong>.
+        </p>
+        <p>
+          Este espacio existe para recordarte que pase lo que pase, yo sigo aquí. Escucha nuestra canción, respira conmigo a la distancia y recuerda que eres mi persona favorita. Siempre serás tú (<em>"It's You"</em>).
+        </p>
+      </div>
+
+      <div class="mt-4 pt-3 border-t border-rose-500/20 flex items-center justify-between text-xs text-rose-300/80">
+        <span class="font-serif-romantic italic">Siempre aquí para ti, a un solo latido de distancia.</span>
+        <i data-lucide="heart" class="w-4 h-4 text-rose-400 fill-rose-400 animate-pulse"></i>
+      </div>
+    </section>
+
+    <!-- Frase Poética de Antoine de Saint-Exupéry -->
+    <section class="mt-6 p-5 sm:p-6 rounded-2xl glass-unit border-rose-500/20 text-center relative overflow-hidden" aria-label="Cita romántica">
+      <div class="absolute top-2 left-3 text-rose-500/20 text-4xl select-none font-serif-romantic">“</div>
+      <div class="relative z-10 space-y-3 px-2 sm:px-6">
+        <p class="font-serif-romantic italic text-sm sm:text-base text-rose-100/90 leading-relaxed">
           "Por supuesto que te haré daño. Por supuesto que me harás daño. Por supuesto que nos haremos daño el uno al otro. Pero esa es la condición misma de la existencia."
         </p>
-        <p>
+        <p class="font-serif-romantic italic text-sm sm:text-base text-pink-200/90 leading-relaxed">
           "Para llegar a ser primavera, significa aceptar el riesgo del invierno. Para llegar a ser presencia, significa aceptar el riesgo de la ausencia."
         </p>
-      </blockquote>
-
-      <div class="mt-4 pt-4 border-t border-slate-800/80 text-center">
-        <cite class="not-italic text-xs font-semibold tracking-wider uppercase text-rose-300">
+        <div class="pt-2 text-xs sm:text-sm font-semibold tracking-wide text-rose-400 font-sans">
           — Antoine de Saint-Exupéry
-        </cite>
+        </div>
       </div>
-    </article>
+    </section>
+
+    <!-- Pie de página con fechas -->
+    <footer class="mt-8 pt-5 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs sm:text-sm text-slate-400">
+      <div class="flex items-center gap-2">
+        <i data-lucide="calendar-heart" class="w-4 h-4 text-rose-400"></i>
+        <span>Nuestro Inicio: <strong id="startDateLabel" class="text-rose-200 font-medium">22 de Septiembre</strong></span>
+      </div>
+
+      <div class="flex items-center gap-2 text-slate-500">
+        <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500 shrink-0 animate-pulse"></i>
+        <span>Hora actual: <span id="currentDateLabel" class="text-slate-300 font-mono-numbers">Sincronizando...</span></span>
+      </div>
+    </footer>
 
   </main>
 
-  <!-- Script Lógica -->
   <script>
     if (window.lucide) {
       lucide.createIcons();
     }
 
     /* ====================================================
-     * 1. LÓGICA DEL CRONÓMETRO (MARTES 22 DE SEPTIEMBRE)
+     * 1. CANVAS: CORAZONES Y DESTELLOS FLOTANTES
      * ==================================================== */
-    function calculateStartDate() {
+    const canvas = document.getElementById('floatingHeartsCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    const hearts = [];
+    const heartColors = ['#f43f5e', '#fb7185', '#e11d48', '#fda4af', '#f472b6'];
+
+    for (let i = 0; i < 30; i++) {
+      hearts.push({
+        x: Math.random() * width,
+        y: Math.random() * height + height,
+        size: Math.random() * 9 + 5,
+        speedX: Math.random() * 0.8 - 0.4,
+        speedY: Math.random() * 0.9 + 0.5,
+        opacity: Math.random() * 0.45 + 0.25,
+        color: heartColors[Math.floor(Math.random() * heartColors.length)],
+        floatOffset: Math.random() * 100
+      });
+    }
+
+    function drawHeart(x, y, size, color, opacity) {
+      ctx.save();
+      ctx.globalAlpha = opacity;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      const topCurveHeight = size * 0.3;
+      ctx.moveTo(x, y + topCurveHeight);
+      ctx.bezierCurveTo(x, y, x - size / 2, y, x - size / 2, y + topCurveHeight);
+      ctx.bezierCurveTo(x - size / 2, y + (size + topCurveHeight) / 2, x, y + (size + topCurveHeight) / 2, x, y + size);
+      ctx.bezierCurveTo(x, y + (size + topCurveHeight) / 2, x + size / 2, y + (size + topCurveHeight) / 2, x + size / 2, y + topCurveHeight);
+      ctx.bezierCurveTo(x + size / 2, y, x, y, x, y + topCurveHeight);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function animateHearts() {
+      ctx.clearRect(0, 0, width, height);
+
+      hearts.forEach(h => {
+        h.y -= h.speedY;
+        h.x += Math.sin((h.y + h.floatOffset) * 0.015) * 0.6 + h.speedX;
+
+        if (h.y < -30) {
+          h.y = height + 20;
+          h.x = Math.random() * width;
+        }
+
+        drawHeart(h.x, h.y, h.size, h.color, h.opacity);
+      });
+
+      requestAnimationFrame(animateHearts);
+    }
+    animateHearts();
+
+    /* ====================================================
+     * 2. RECUERDOS Y CARRUSEL DE FOTOS
+     * ==================================================== */
+    const couplePhotos = [
+      {
+        url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80",
+        caption: '"Juntos en cada paso del camino..."'
+      },
+      {
+        url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80",
+        caption: '"Mi lugar favorito siempre es a tu lado 💖"'
+      },
+      {
+        url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=800&q=80",
+        caption: '"Risas, abrazos y recuerdos eternos"'
+      },
+      {
+        url: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80",
+        caption: '"It\'s You, desde el 22 de septiembre"'
+      }
+    ];
+
+    let currentPhotoIndex = 0;
+    const memoryPhoto = document.getElementById('memoryPhoto');
+    const memoryCaption = document.getElementById('memoryCaption');
+    const photoBadgeIndex = document.getElementById('photoBadgeIndex');
+    const btnNextPhoto = document.getElementById('btnNextPhoto');
+    const btnPrevPhoto = document.getElementById('btnPrevPhoto');
+    const btnCyclePhoto = document.getElementById('btnCyclePhoto');
+    const userPhotoInput = document.getElementById('userPhotoInput');
+
+    function updatePhotoDisplay() {
+      const item = couplePhotos[currentPhotoIndex];
+      memoryPhoto.src = item.url;
+      memoryCaption.textContent = item.caption;
+      photoBadgeIndex.textContent = `${currentPhotoIndex + 1} / ${couplePhotos.length}`;
+    }
+
+    btnNextPhoto.addEventListener('click', () => {
+      currentPhotoIndex = (currentPhotoIndex + 1) % couplePhotos.length;
+      updatePhotoDisplay();
+    });
+
+    btnPrevPhoto.addEventListener('click', () => {
+      currentPhotoIndex = (currentPhotoIndex - 1 + couplePhotos.length) % couplePhotos.length;
+      updatePhotoDisplay();
+    });
+
+    btnCyclePhoto.addEventListener('click', () => {
+      currentPhotoIndex = (currentPhotoIndex + 1) % couplePhotos.length;
+      updatePhotoDisplay();
+    });
+
+    userPhotoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          couplePhotos.unshift({
+            url: evt.target.result,
+            caption: '"Nuestra foto especial juntos 💖"'
+          });
+          currentPhotoIndex = 0;
+          updatePhotoDisplay();
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    /* ====================================================
+     * 3. CRONÓMETRO: DESDE EL 22 DE SEPTIEMBRE
+     * ==================================================== */
+    function getSeptember22Date() {
       const now = new Date();
       const currentYear = now.getFullYear();
       let targetDate = new Date(currentYear, 8, 22, 0, 0, 0, 0);
@@ -334,14 +603,18 @@
       return targetDate;
     }
 
-    const startDate = calculateStartDate();
+    const startDate = getSeptember22Date();
+    const startDateElement = document.getElementById('startDateLabel');
+    if (startDateElement) {
+      startDateElement.textContent = `22 de Septiembre de ${startDate.getFullYear()}, 00:00:00`;
+    }
+
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
     const currentDateEl = document.getElementById('currentDateLabel');
-
-    const pad = (num) => String(num).padStart(2, '0');
+    const pad = (n) => String(n).padStart(2, '0');
 
     function updateChronometer() {
       const now = new Date();
@@ -370,7 +643,79 @@
     setInterval(updateChronometer, 1000);
 
     /* ====================================================
-     * 2. REPRODUCTOR DE AUDIO (ARCHIVO LOCAL MP3)
+     * 4. LETRA SINCRONIZADA ("IT'S YOU" - ALI GATIE)
+     * ==================================================== */
+    const lyricsData = [
+      { time: 0, text: "♪ (Intro instrumental) ♪" },
+      { time: 10, text: "It's you, it's always you" },
+      { time: 15, text: "If I'm ever gonna fall in love, I know it's gon' be you" },
+      { time: 22, text: "It's you, it's always you" },
+      { time: 27, text: "Met a lot of people, but nobody feels like you" },
+      { time: 33, text: "So, please, don't break my heart" },
+      { time: 39, text: "Don't tear me apart" },
+      { time: 44, text: "I know how it starts, trust me, I've been broken before" },
+      { time: 55, text: "Don't break me again, I am wanted, I am here" },
+      { time: 61, text: "Yeah, I want you baby, but don't break me again..." },
+      { time: 68, text: "Baby, I just need you to trust me" },
+      { time: 74, text: "We can make it work if we just try" },
+      { time: 82, text: "It's you, it's always you" },
+      { time: 88, text: "If I'm ever gonna fall in love, I know it's gon' be you" },
+      { time: 94, text: "It's you, it's always you..." },
+      { time: 105, text: "Te elijo a ti en cada segundo y en cada latido 💖" }
+    ];
+
+    const lyricsContainer = document.getElementById('lyricsContainer');
+
+    lyricsData.forEach((item, index) => {
+      const p = document.createElement('p');
+      p.id = `lyric-${index}`;
+      p.className = 'lyric-line text-sm sm:text-base text-slate-400 font-serif-romantic py-1';
+      p.textContent = item.text;
+      p.addEventListener('click', () => {
+        if (audio.duration) {
+          audio.currentTime = item.time;
+          if (audio.paused) audio.play();
+        }
+      });
+      lyricsContainer.appendChild(p);
+    });
+
+    let currentLyricIndex = -1;
+
+    function syncLyrics(currentTime) {
+      let activeIndex = -1;
+      for (let i = 0; i < lyricsData.length; i++) {
+        if (currentTime >= lyricsData[i].time) {
+          activeIndex = i;
+        } else {
+          break;
+        }
+      }
+
+      if (activeIndex !== currentLyricIndex) {
+        currentLyricIndex = activeIndex;
+
+        document.querySelectorAll('.lyric-line').forEach(el => el.classList.remove('active'));
+
+        if (currentLyricIndex >= 0) {
+          const activeEl = document.getElementById(`lyric-${currentLyricIndex}`);
+          if (activeEl) {
+            activeEl.classList.add('active');
+            
+            const containerHeight = lyricsContainer.clientHeight;
+            const elementTop = activeEl.offsetTop - lyricsContainer.offsetTop;
+            const elementHeight = activeEl.clientHeight;
+            lyricsContainer.scrollTo({
+              top: elementTop - (containerHeight / 2) + (elementHeight / 2),
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
+    }
+
+    /* ====================================================
+     * 5. REPRODUCTOR DE AUDIO HTML5 (its-you.mp3)
      * ==================================================== */
     const audio = document.getElementById('audioPlayer');
     const btnPlayPause = document.getElementById('btnPlayPause');
@@ -388,22 +733,18 @@
     const btnLoop = document.getElementById('btnLoop');
     const statusMessage = document.getElementById('statusMessage');
 
-    let isPlaying = false;
     let isUserSeeking = false;
-    let isMuted = false;
-
-    // Volumen inicial
+    audio.loop = true;
     audio.volume = volumeSlider.value / 100;
 
-    function formatTime(seconds) {
-      if (isNaN(seconds) || seconds < 0) return "0:00";
-      const mins = Math.floor(seconds / 60);
-      const secs = Math.floor(seconds % 60);
+    function formatTime(sec) {
+      if (isNaN(sec) || sec < 0) return "0:00";
+      const mins = Math.floor(sec / 60);
+      const secs = Math.floor(sec % 60);
       return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
     }
 
     function setPlayingUI(playing) {
-      isPlaying = playing;
       if (playing) {
         playIcon.classList.add('hidden');
         pauseIcon.classList.remove('hidden');
@@ -411,7 +752,6 @@
         vinylGlow.classList.remove('opacity-0');
         vinylGlow.classList.add('opacity-100');
         equalizer.classList.add('eq-playing');
-        statusMessage.textContent = "Reproduciendo ahora...";
       } else {
         playIcon.classList.remove('hidden');
         pauseIcon.classList.add('hidden');
@@ -419,40 +759,44 @@
         vinylGlow.classList.add('opacity-0');
         vinylGlow.classList.remove('opacity-100');
         equalizer.classList.remove('eq-playing');
-        statusMessage.textContent = "En pausa";
       }
     }
 
-    audio.addEventListener('play', () => setPlayingUI(true));
-    audio.addEventListener('pause', () => setPlayingUI(false));
+    btnPlayPause.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          setPlayingUI(true);
+          statusMessage.textContent = "Reproduciendo nuestra canción...";
+        }).catch(err => {
+          console.error("Error al reproducir audio:", err);
+          statusMessage.textContent = "Haz clic para permitir reproducir.";
+        });
+      } else {
+        audio.pause();
+        setPlayingUI(false);
+        statusMessage.textContent = "En pausa";
+      }
+    });
 
     audio.addEventListener('loadedmetadata', () => {
       totalDurationLabel.textContent = formatTime(audio.duration);
     });
 
     audio.addEventListener('timeupdate', () => {
-      if (isUserSeeking) return;
-      if (audio.duration) {
-        progressBar.value = (audio.currentTime / audio.duration) * 100;
+      syncLyrics(audio.currentTime);
+
+      if (!isUserSeeking && audio.duration) {
+        const progress = (audio.currentTime / audio.duration) * 100;
+        progressBar.value = progress;
         currentTimeLabel.textContent = formatTime(audio.currentTime);
+        totalDurationLabel.textContent = formatTime(audio.duration);
       }
     });
 
     audio.addEventListener('ended', () => {
       if (!audio.loop) {
         setPlayingUI(false);
-        statusMessage.textContent = "Canción finalizada";
-      }
-    });
-
-    btnPlayPause.addEventListener('click', () => {
-      if (audio.paused) {
-        audio.play().catch(e => {
-          console.warn("Autoplay bloqueado:", e);
-          statusMessage.textContent = "Toca para reproducir";
-        });
-      } else {
-        audio.pause();
+        statusMessage.textContent = "Canción terminada";
       }
     });
 
@@ -461,6 +805,7 @@
       if (audio.duration) {
         const seekTime = (progressBar.value / 100) * audio.duration;
         currentTimeLabel.textContent = formatTime(seekTime);
+        syncLyrics(seekTime);
       }
     });
 
@@ -474,9 +819,24 @@
     volumeSlider.addEventListener('input', (e) => {
       const vol = e.target.value;
       audio.volume = vol / 100;
-      audio.muted = false;
-      isMuted = false;
+      audio.muted = (vol == 0);
+      updateVolumeIcon(vol);
+    });
 
+    btnMute.addEventListener('click', () => {
+      if (audio.muted || audio.volume === 0) {
+        audio.muted = false;
+        audio.volume = 0.85;
+        volumeSlider.value = 85;
+        updateVolumeIcon(85);
+      } else {
+        audio.muted = true;
+        volumeSlider.value = 0;
+        updateVolumeIcon(0);
+      }
+    });
+
+    function updateVolumeIcon(vol) {
       if (vol == 0) {
         volumeIcon.setAttribute('data-lucide', 'volume-x');
       } else if (vol < 50) {
@@ -485,34 +845,22 @@
         volumeIcon.setAttribute('data-lucide', 'volume-2');
       }
       if (window.lucide) lucide.createIcons();
-    });
-
-    btnMute.addEventListener('click', () => {
-      isMuted = !isMuted;
-      audio.muted = isMuted;
-
-      if (isMuted) {
-        volumeSlider.value = 0;
-        volumeIcon.setAttribute('data-lucide', 'volume-x');
-      } else {
-        volumeSlider.value = audio.volume * 100 || 80;
-        volumeIcon.setAttribute('data-lucide', 'volume-2');
-      }
-      if (window.lucide) lucide.createIcons();
-    });
+    }
 
     btnLoop.addEventListener('click', () => {
       audio.loop = !audio.loop;
       if (audio.loop) {
-        btnLoop.classList.remove('text-slate-500');
-        btnLoop.classList.add('text-rose-400');
-        btnLoop.title = "Bucle activado";
+        btnLoop.classList.remove('text-slate-500', 'border-slate-700/40');
+        btnLoop.classList.add('text-rose-400', 'border-rose-400/30');
+        btnLoop.title = "Repetición continua activada";
       } else {
-        btnLoop.classList.add('text-slate-500');
-        btnLoop.classList.remove('text-rose-400');
-        btnLoop.title = "Bucle desactivado";
+        btnLoop.classList.add('text-slate-500', 'border-slate-700/40');
+        btnLoop.classList.remove('text-rose-400', 'border-rose-400/30');
+        btnLoop.title = "Repetición desactivada";
       }
     });
   </script>
 </body>
 </html>
+
+```
